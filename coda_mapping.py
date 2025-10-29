@@ -20,7 +20,7 @@ GOOGLE_SHEET_URL = 'https://docs.google.com/spreadsheets/d/1O-fYK3CywWpZ__YDVx61
 import os
 from codaio import Document
 
-os.environ['CODA_API_KEY'] = 'your_actual_api_key'  # Or make sure GitHub Secret is mapped
+os.environ['CODA_API_KEY'] = '48d23695-6f3a-4822-8bb7-5b66d230cc58'  # Or make sure GitHub Secret is mapped
 
 doc = Document.from_environment(CODA_DOC_ID)
 table = doc.get_table("grid-0BRlKYNNB-")
