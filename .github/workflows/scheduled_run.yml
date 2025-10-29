@@ -22,7 +22,7 @@ jobs:
           pip install -r requirements.txt  # or pip install pandas gspread etc. if no requirements.txt
 
       - name: Write Google Credentials to File
-        run: echo "${{ secrets.GOOGLE_CRED }}" > google-credentials.json
+        run: echo "${{ secrets.GOOGLE_CREDs }}" > google-credentials.json
       - name: Show google-credentials.json size
         run: ls -lh google-credentials.json
 
