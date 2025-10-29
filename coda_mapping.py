@@ -16,7 +16,7 @@ gc = gspread.authorize(creds)
 
 
 import os
-os.environ["CODA_API_KEY"] = "48d23695-6f3a-4822-8bb7-5b66d230cc58"
+os.environ["CODA_API_KEY"] = os.environ.get("CODA_API_KEY", "")
 
 from codaio import Document
 import pandas as pd
