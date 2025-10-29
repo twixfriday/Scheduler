@@ -25,16 +25,11 @@ doc = Document.from_environment(doc_id)
 
 table = doc.get_table("grid-0BRlKYNNB-")  # or table_id
 
-for col in table.columns():
-    print(f"Name: {col.name} | ID: {col.id}")
 
 # Then upload table data to DataFrame
 df = pd.DataFrame(table.to_dict())
-print(df.head())
 
 df = df[df['Duplicate'] == False]
-
-df['Duplicate'].unique()
 
 df_report = df[["Telegram Manager Nickname",
                 "Raw Artist Name",
@@ -58,24 +53,12 @@ df_report['Parsing Date'] = df_report['Parsing Date'].dt.strftime('%d.%m.%Y')
 df_report['Promo Date'] = pd.to_datetime(df_report['Promo Date'])
 df_report['Promo Date'] = df_report['Promo Date'].dt.strftime('%d.%m.%Y')
 
-df_report
-
 import gspread
-from google.colab import auth
-auth.authenticate_user()
-
-import google.auth
-from google.auth.transport.requests import Request
-from google.oauth2.credentials import Credentials
-
-from google.colab import drive
-drive.mount('/content/drive')
-
+from google.oauth2.service_account import Credentials
 import pandas as pd
 from gspread_dataframe import set_with_dataframe
 
-
-creds, _ = google.auth.default()
+creds = Credentials.from_service_account_file('google-credentials.json')
 
 gc = gspread.authorize(creds)
 
