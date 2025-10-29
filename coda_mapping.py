@@ -17,7 +17,7 @@ CODA_TABLE_ID = 'grid-0BRlKYNNB-'
 GOOGLE_SHEET_URL = 'https://docs.google.com/spreadsheets/d/1O-fYK3CywWpZ__YDVx6119Rw9Pe4NHaBob13MXBAVlk/edit?pli=1&gid=117213402'
 
 # Method 1: Pass doc ID and API key as positional arguments
-doc = Document(CODA_DOC_ID, CODA_API_KEY)
+doc = Document(CODA_DOC_ID, api_key=CODA_API_KEY)
 
 table = doc.get_table(CODA_TABLE_ID)
 
