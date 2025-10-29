@@ -26,5 +26,7 @@ jobs:
 
       - name: Run script
         env:
+          CODA_API_KEY: ${{ secrets.CODA_API_KEY }}
           GOOGLE_CREDS: ${{ secrets.GOOGLE_CREDS }}
         run: python coda_mapping.py
+
