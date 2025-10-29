@@ -19,7 +19,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install pandas gspread codaio
+          pip install -r requirements.txt  # or pip install pandas gspread etc. if no requirements.txt
 
       - name: Write Google Credentials to File
         run: echo "${{ secrets.GOOGLE_CREDS }}" > google-credentials.json
