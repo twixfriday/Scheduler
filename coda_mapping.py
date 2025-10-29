@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1y7oIZ8saSz6Y-8C-CGmBOKrVCYlJXSYT
 """
 
-!pip install codaio
+
 import gspread
 from google.oauth2.service_account import Credentials
 
