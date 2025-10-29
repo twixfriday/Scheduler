@@ -22,13 +22,13 @@ jobs:
           pip install -r requirements.txt  # or pip install pandas gspread etc. if no requirements.txt
 
       - name: Write Google Credentials to File
-        run: echo "${{ secrets.GOOGLE_CREDs }}" > google-credentials.json
+        run: echo "${{ secrets.GOOGLE_CRED }}" > google-credentials.json
       - name: Show google-credentials.json size
         run: ls -lh google-credentials.json
 
       - name: Run script
         env:
           CODA_API_KEY: ${{ secrets.CODA_API_KEY }}
-          GOOGLE_CREDS: ${{ secrets.GOOGLE_CREDS }}
+          GOOGLE_CREDS: ${{ secrets.GOOGLE_CRED }}
         run: python coda_mapping.py
 
