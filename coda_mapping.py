@@ -7,7 +7,7 @@ from gspread_dataframe import set_with_dataframe
 
 # === ENVIRONMENT VARIABLES/SECRETS ===
 # CODA_API_KEY: GitHub Secret
-CODA_API_KEY = os.environ.get('CODA_API_KEY')
+CODA_API_KEY = '48d23695-6f3a-4822-8bb7-5b66d230cc58'
 
 # Coda Document and Table IDs (replace with your real IDs)
 CODA_DOC_ID = 'FNKNx-WCXR'
