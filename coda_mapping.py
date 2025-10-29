@@ -8,6 +8,12 @@ Original file is located at
 """
 
 !pip install codaio
+import gspread
+from google.oauth2.service_account import Credentials
+
+creds = Credentials.from_service_account_file('google-credentials.json')
+gc = gspread.authorize(creds)
+
 
 import os
 os.environ["CODA_API_KEY"] = "48d23695-6f3a-4822-8bb7-5b66d230cc58"
