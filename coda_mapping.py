@@ -58,8 +58,10 @@ print(df_report.head())
 # === WRITE TO GOOGLE SHEET ===
 # Assumes google-credentials.json is written by workflow
 
-creds = Credentials.from_service_account_file('google-credentials.json')
+SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
+creds = Credentials.from_service_account_file('google-credentials.json', scopes=SCOPES)
 gc = gspread.authorize(creds)
+
 
 # Open Google Sheet and write DataFrame to first worksheet
 sh = gc.open_by_url(GOOGLE_SHEET_URL)
